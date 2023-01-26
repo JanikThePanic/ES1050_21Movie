@@ -1,0 +1,72 @@
+/* varibles */
+:root {
+	--background-color: #181a1b;
+	--offset-previews: 65%;
+	--color: #e8e6e3;
+}
+
+body {
+	background-color: var(--background-color);
+    overflow: hidden;
+	color: var(--color);
+}
+
+/*  */
+/* movie title previews */
+/*  */
+.thumbnails {
+	margin: 2em 0;
+	width: 100%;
+    flex-direction: row;
+}
+
+.current, .left, .right {
+	float: left;
+	width: 33.33%;
+	height: 85vh;
+}
+
+.thumbnails img {
+	height: 85vh;
+	border-radius: 5%;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+/* side options */
+.left img {
+	translate: calc(var(--offset-previews) * -1);
+}
+
+.left:after {
+	content:'';
+	position:absolute;
+	left:0; top:0;
+	width:100%;
+	height: 100%;
+	display:inline-block;
+	background: linear-gradient(90deg, rgba(24,26,27,1) 0%, rgba(255,255,255,0) 38%);
+}
+
+.right img {
+	translate: var(--offset-previews);
+}
+
+.right:after {
+	content:'';
+	position:absolute;
+	left:0; top:0;
+	width:100%;
+	height: 100%;
+	display:inline-block;
+	background: linear-gradient(90deg, rgba(255,255,255,0) 84%, rgba(24,26,27,.75) 100%);
+}
+
+/*  */
+/* addtional info */
+/*  */
+
+.addtional-info {
+	color: var(--color);
+}
