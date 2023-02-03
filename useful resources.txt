@@ -1,2 +1,10 @@
 open website on starup
 https://smarthomepursuits.com/open-website-on-startup-with-raspberry-pi-os/
+
+if using linux:
+1. install firefox/chrome and python3
+2. run "sudo cp -i ~/Desktop/[html].py /bin"
+3. run "sudo crontab -e"
+  - if first time, select editor
+4. add "@reboot pushd &lt;<filename>.html;  python3 -m http.server 9999; popd;"
+5. save and reboot
