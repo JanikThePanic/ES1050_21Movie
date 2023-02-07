@@ -1,2 +1,27 @@
-open website on starup
+Raspberry Pi OS commands:
+1. sudo apt update
+2. sudo apt full-upgrade
+3. cd .config
+4 (if gives error, ignore and move to 5). sudo mkdir -p lxsession/LXDE-pi
+5. sudo nano lxsession/LXDE-pi/autostart
+
+opens an editor, now add:
+"
+@lxpanel --profile LXDE-pi
+@pcmanfm --desktop --profile LXDE-pi
+#@xscreensaver -no-splash
+point-rpi
+@chromium-browser --start-fullscreen --start-maximized <filepath>/<filename>.html
+"
+
+Link for reference:
 https://smarthomepursuits.com/open-website-on-startup-with-raspberry-pi-os/
+
+
+If using Linux:
+1. install firefox/chrome and python3
+2. run "sudo cp -i ~/Desktop/<filename>.html /bin"
+3. run "sudo crontab -e"
+  - if first time, select editor
+4. add "@reboot pushd &lt;<filename>.html;  python3 -m http.server 9999; popd;"
+5. save and reboot
