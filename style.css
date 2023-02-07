@@ -14,6 +14,10 @@ body {
 /*  */
 /* movie title previews */
 /*  */
+
+.main {
+	transition: src 2s;
+}
 .thumbnails {
 	margin: 2em 0;
 	width: 100%;
@@ -28,7 +32,7 @@ body {
 
 .thumbnails img {
 	height: 85vh;
-	border-radius: 5%;
+	border-radius: 20px;
 	display: block;
 	margin-left: auto;
 	margin-right: auto;

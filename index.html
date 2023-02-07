@@ -6,8 +6,9 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Movie Playback</title>
-		<script src="script.js"></script>
+		<script src="./script.js"></script>
 		<link rel="stylesheet" href="style.css" />
+		<script src="./dependency/jquery-3.6.3.min.js"></script>
 	</head>
 	<body>
 		<!-- preview of movie title covers -->
@@ -17,15 +18,15 @@
 		<div class="thumbnails">
 			<!-- left preivew -->
 			<div class="left">
-				<img src="./assets/lion-king-poster.jpg" alt="Movie Cover" />
+				<img id="main-left" src="./assets/lion-king.jpg" alt="Movie Cover" />
 			</div>
 			<!-- current -->
 			<div class="current">
-				<img src="./assets/lion-king-poster.jpg" alt="Movie Cover" />
+				<img id="main" src="./assets/lion-king.jpg" alt="Movie Cover" />
 			</div>
 			<!-- right preview -->
 			<div class="right">
-				<img src="./assets/lion-king-poster.jpg" alt="Movie Cover" />
+				<img id="main-right" src="./assets/lion-king.jpg" alt="Movie Cover" />
 			</div>
 		</div>
 
