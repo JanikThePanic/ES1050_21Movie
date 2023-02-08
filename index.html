@@ -1,38 +1,35 @@
+<!-- ES1050 - 21Movie (2023)-->
 <!DOCTYPE html>
-
 <html lang="en">
 	<head>
 		<meta charset="UTF-8" />
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Movie Playback</title>
+		<title>ES1050 | Movie</title>
 		<script src="./script.js"></script>
-		<link rel="stylesheet" href="style.css" />
 		<script src="./dependency/jquery-3.6.3.min.js"></script>
+		<link rel="stylesheet" href="style.css" />
+		<link rel="stylesheet" href="./dependency/flickity.css" media="screen">
 	</head>
 	<body>
-		<!-- preview of movie title covers -->
-		<!--  -->
-		<!-- WILL make img srcs be replaced by js that scanns assets -->
-		<!--  -->
-		<div class="thumbnails">
-			<!-- left preivew -->
-			<div class="left">
-				<img id="main-left" src="./assets/lion-king.jpg" alt="Movie Cover" />
+		<div class="gallery js-flickity"
+			data-flickity-options='{ "wrapAround": true }'>
+			<div class="poster">
+				<img src="./assets/lion-king.jpg">
+			</div>	 
+			<div class="poster">
+				<img src="./assets/ratatouille.jpg">
 			</div>
-			<!-- current -->
-			<div class="current">
-				<img id="main" src="./assets/lion-king.jpg" alt="Movie Cover" />
+			<div class="poster">
+				<img src="./assets/inside-out.jpg">
 			</div>
-			<!-- right preview -->
-			<div class="right">
-				<img id="main-right" src="./assets/lion-king.jpg" alt="Movie Cover" />
+			<div class="poster">
+				<img src="./assets/wall-e.jpg">
+			</div>
+			<div class="poster">
+				<img src="./assets/big-hero-6.jpg">
 			</div>
 		</div>
-
-		<!-- katyln cant see well, so this is small and more for admin/staff -->
-		<div class="addtional-info">
-			<h1>The Lion King</h1>
-		</div>
+		<script src="./dependency/flickity.pkgd.min.js"></script>
 	</body>
 </html>
