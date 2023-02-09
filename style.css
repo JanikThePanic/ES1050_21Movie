@@ -5,6 +5,7 @@ box-sizing: border-box;
 
 html, body {
 	background-color: #181a1b;
+	overflow: hidden;
 }
 .gallery {
 	background: #181a1b;
