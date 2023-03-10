@@ -21,3 +21,7 @@ with open(dir_path+"\movies.txt", 'w') as fp:
 	for item in movie_names:
         # write each item on a new line
 		fp.write("%s\n" % item)
+
+
+# LAUNCH index.html IN FULLSCREEN
+# STILL FINDING A WAY
