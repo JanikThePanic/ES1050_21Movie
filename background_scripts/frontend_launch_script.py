@@ -1,26 +1,29 @@
 import os
 
-# dir with all movie files
-# will also make the movies.txt file there
-# absolute location
-dir_path = r"./assets"
+# absolute path of movies
+dir_path = r"../movies"
 
 # list to store files
 movie_names = []
 
-# Iterate directory
+# iterate directory
 for path in os.listdir(dir_path):
     # check if current path is a file
     if os.path.isfile(os.path.join(dir_path, path)):
-        movie_names.append(path)
+        # add to list
+        movie_names.append(path.split('.')[0])
 
+# convert the list into a reformatted string
+output_string = '", "'.join(str(x) for x in movie_names)
+print(output_string)
 
-# open file in write mode
-with open(dir_path+"\movies.txt", 'w') as fp:
-    for item in movie_names:
-        # write each item on a new line
-        fp.write("%s\n" % item)
+# absolute path of dependency files
+dep_path = r"../dependency"
 
+# open javascript file in write mode
+with open(dep_path+'/movies.js', 'w') as fp:
+    # add a new formatted javascript array
+    fp.write('let movies = ["' + output_string + '"];')
 
 # LAUNCH index.html IN FULLSCREEN
 # STILL FINDING A WAY
