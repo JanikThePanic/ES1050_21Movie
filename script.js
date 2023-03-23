@@ -8,8 +8,8 @@ let system = {
 }
 
 $('.gallery').on( 'change.flickity', function( event, index ) {
-  console.log( 'Slide changed to ' + index )
   system.index = index
+  console.log( 'Slide changed to ' + movies[system.index].title)
 });
 
 // i]f video is selected

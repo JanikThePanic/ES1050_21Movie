@@ -1,7 +1,7 @@
 import os
 
 # scan all thumbnails
-thumbnails = [];
+thumbnails = []
 thmb_path = r'../thumbnails'
 for path in os.listdir(thmb_path):
     # check file existence
