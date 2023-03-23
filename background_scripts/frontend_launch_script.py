@@ -1,7 +1,7 @@
 import os
 
 # absolute path of movies
-dir_path = r"./movies"
+dir_path = r"../movies"
 
 # list to store files
 movie_names = []
@@ -19,7 +19,7 @@ output_string = 'let movies = ["' + output_string + '"];'
 print(output_string)
 
 # absolute path of dependency files
-dep_path = r"./dependency"
+dep_path = r"../dependency"
 
 # open javascript file in write mode
 with open(dep_path+'/movies.js', 'w') as fp:
