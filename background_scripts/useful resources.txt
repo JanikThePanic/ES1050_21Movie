@@ -25,3 +25,14 @@ If using Linux:
   - if first time, select editor
 4. add "@reboot pushd &lt;<filename>.html;  python3 -m http.server 9999; popd;"
 5. save and reboot
+
+
+Janik's plan to launch html:
+1)
+import webbrowser
+webbrowser.open("file://index.html", new=2)  # open in new tab
+2) (idk if way to make sure is fullscreen, may just have to set browser to auto fullscreen and also need to set defualt way to open html to chrome)
+os.system(" start index.html")
+3)
+dont do it from python, do it from the linux or shell
+call the read script, sleep, then open html
