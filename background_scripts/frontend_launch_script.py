@@ -15,6 +15,7 @@ for path in os.listdir(dir_path):
 
 # convert the list into a reformatted string
 output_string = '", "'.join(str(x) for x in movie_names)
+output_string = 'let movies = ["' + output_string + '"];'
 print(output_string)
 
 # absolute path of dependency files
@@ -23,7 +24,7 @@ dep_path = r"./dependency"
 # open javascript file in write mode
 with open(dep_path+'/movies.js', 'w') as fp:
     # add a new formatted javascript array
-    fp.write('let movies = ["' + output_string + '"];')
+    fp.write(output_string)
 
 # LAUNCH index.html IN FULLSCREEN
 # STILL FINDING A WAY
