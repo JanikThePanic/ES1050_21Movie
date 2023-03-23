@@ -7,35 +7,40 @@ let system = {
   play: false
 }
 
-// if video is selected
-$('.gallery').on( 'staticClick.flickity', function(event, pointer, cellElement, cellIndex) {
+$('.gallery').on( 'change.flickity', function( event, index ) {
+  console.log( 'Slide changed to ' + index )
+  system.index = index
+});
 
-    // dismiss if cell was not clicked
+// i]f video is selected
+$('.gallery').on( 'staticClick.flickity', function(event, pointer, cellElement, cellIndex) {
     if (!cellElement) {
       return;
     }
-    // show the video stream and change the src
-    $('.gallery').hide();
-    $('#video').show();
-    $('#video').attr('src', './movies/' + movies[system.index] + '.mp4');
-    $('#video')[0].load();
-    console.log("Selected slide " + cellIndex + " and loaded video with path " + './movies/' + movies[system.index] + '.mp4');
-
-    // change the playmode
-    system.play = true;
+    // define the path and start the movie
+    let path = './movies/' + movies[system.index].title + '.' + movies[system.index].type;
+    startMovie(path);
 });
 
-// if video player is pressed
-$('#video').keydown(function() {
+// when video ends
+$(document).ready(function(){
+  $('#video').on('ended',function(){
+    startMenu();
+  });
+});
 
-  // return the gallery
+function startMenu() {
+  system.play = false;
   $('.gallery').show();
   $('#video').hide();
+  console.log("Closed video and returned to menu.");
+}
 
-  // change the playmode
-  system.play = false;
-});
-
-$('.gallery').on( 'change.flickity', function( event, index ) {
-  console.log( 'Slide changed to ' + index )
-});
+function startMovie(path) {
+  system.play = true;
+  $('.gallery').hide();
+  $('#video').show();
+  $('#video').attr('src', path);
+  $('#video')[0].load();
+  console.log("Loaded video with path: " + path);
+}

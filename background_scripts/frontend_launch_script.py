@@ -1,26 +1,39 @@
 import os
 
-# absolute path of movies
-dir_path = r"./movies"
+# scan all thumbnails
+thumbnails = [];
+thmb_path = r'../thumbnails'
+for path in os.listdir(thmb_path):
+    # check file existence
+    if os.path.isfile(os.path.join(thmb_path, path)):
+        # append to array
+        thumbnails.append(path.split('.')[0])
 
-# list to store files
-movie_names = []
-
-# iterate directory
+# scan all movies
+movies = []
+dir_path = r"../movies"
 for path in os.listdir(dir_path):
-    # check if current path is a file
+    # check file existence
     if os.path.isfile(os.path.join(dir_path, path)):
-        # add to list
-        movie_names.append(path.split('.')[0])
+        # append to array
+        movies.append(path)
+
+# create output array
+output = []
+for title in movies:
+    # create a javascript object for each movie
+    stamp = title.split('.')
+    poster = 'false'
+    if stamp[0] in thumbnails:
+        poster = 'true'
+    # append to array
+    output.append("{title: '" + stamp[0] + "', type: '" + stamp[1] + "', thumbnail: " + poster + "}")
 
 # convert the list into a reformatted string
-output_string = '", "'.join(str(x) for x in movie_names)
-output_string = 'let movies = ["' + output_string + '"];'
-print(output_string)
+output_string = 'let movies = [' + (', '.join(str(x) for x in output)) + '];'
 
-# absolute path of dependency files
-dep_path = r"./dependency"
-
+# define absolute path of dependencey files
+dep_path = r"../dependency"
 # open javascript file in write mode
 with open(dep_path+'/movies.js', 'w') as fp:
     # add a new formatted javascript array

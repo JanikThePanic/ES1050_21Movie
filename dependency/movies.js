@@ -1,1 +1,1 @@
-let movies = ["big-hero-6", "ratatouille", "wall-e", "lion-king", "inside-out"];
+let movies = [{title: 'big-hero-6', type: 'mp4', thumbnail: true}, {title: 'ratatouille', type: 'mp4', thumbnail: true}, {title: 'wall-e', type: 'mp4', thumbnail: true}, {title: 'lion-king', type: 'mp4', thumbnail: true}, {title: 'inside-out', type: 'mp4', thumbnail: true}, {title: 'tangled', type: 'mp4', thumbnail: false}];
