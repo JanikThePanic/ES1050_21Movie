@@ -11,4 +11,4 @@ in crontab file:
 AS WELL:
 to open the actual webpage, myapp.desktop is found in the /etc/xdg/autostart/ with:
 [Desktop Entry]
-Exec=/usr/bin/chromium %U --start-fullscreen --start-maximized file:///home/janik/Desktop/ES1050_21Movie-main/index.html
+Exec=/usr/bin/chromium %U --start-fullscreen --start-maximized file:///home/janik/Desktop/ES1050_21Movie/index.html
