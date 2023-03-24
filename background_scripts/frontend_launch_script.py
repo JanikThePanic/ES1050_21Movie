@@ -38,6 +38,3 @@ dep_path = r"../dependency"
 with open(dep_path+'/movies.js', 'w') as fp:
     # add a new formatted javascript array
     fp.write(output_string)
-
-cmd = "/usr/bin/chromium %U --start-fullscreen --start-maximized file:///home/janik/Desktop/ES1050_21Movie-main/index.html"
-os.system(cmd)
