@@ -1,8 +1,10 @@
 import os
 
+drive_path = 'G:/'
+
 # scan all thumbnails
 thumbnails = []
-thmb_path = r'../thumbnails'
+thmb_path = drive_path + 'thumbnails'
 for path in os.listdir(thmb_path):
     # check file existence
     if os.path.isfile(os.path.join(thmb_path, path)):
@@ -11,7 +13,7 @@ for path in os.listdir(thmb_path):
 
 # scan all movies
 movies = []
-dir_path = r"../movies"
+dir_path = drive_path + 'movies'
 for path in os.listdir(dir_path):
     # check file existence
     if os.path.isfile(os.path.join(dir_path, path)):
@@ -38,3 +40,7 @@ dep_path = r"../dependency"
 with open(dep_path+'/movies.js', 'w') as fp:
     # add a new formatted javascript array
     fp.write(output_string)
+    fp.write('\n' +  'let drive_path = "' + str(drive_path) + '";')
+    
+
+print("Finished scanning on drive " + str(drive_path) + " with " + str(len(movies)) + " movies and " + str(len(thumbnails)) + " thumbnails.")

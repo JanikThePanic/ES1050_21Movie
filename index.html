@@ -13,14 +13,19 @@
 		<video autoplay controls id="video">
 			<source src="" type="video/mp4">
 		</video>
-		<div class="gallery js-flickity"
-			data-flickity-options='{ "wrapAround": true }'>
-		</div>
+		<div class="gallery">
+			<div class="slides">
+			  <img style="width:100%" id="left">
+			</div>
+			<div class="slides">
+			  <img style="width:100%" id="center">
+			</div>
+			<div class="slides">
+			  <img style="width:100%" id="right">
+			</div>
+		  </div>
+		<script src="./dependency/online.js"></script>
 		<script src="./dependency/movies.js"></script>
-		<script src="./dependency/startup.js"></script>
-		<script src="./dependency/flickity.pkgd.min.js"></script>
-		<link rel="stylesheet" href="./dependency/flickity.css" media="screen">
 	</body>
 </html>
-
 <script src="./script.js"></script>

@@ -1,1 +1,2 @@
-let movies = [{title: 'big-hero-6', type: 'mp4', thumbnail: true}, {title: 'ratatouille', type: 'mp4', thumbnail: true}, {title: 'wall-e', type: 'mp4', thumbnail: true}, {title: 'lion-king', type: 'mp4', thumbnail: true}, {title: 'inside-out', type: 'mp4', thumbnail: true}, {title: 'tangled', type: 'mp4', thumbnail: false}];
+let movies = [{title: 'Finding Nemo (2003)', type: 'mp4', thumbnail: false}, {title: 'Alvin and The Chipmunks (2007)', type: 'mp4', thumbnail: false}, {title: 'Camp Rock (2008)', type: 'mp4', thumbnail: false}, {title: 'Coco (2017)', type: 'mp4', thumbnail: false}, {title: 'The Jungle Book (2016)', type: 'mp4', thumbnail: false}];
+let drive_path = "G:/";
