@@ -46,14 +46,16 @@ for title in movies:
         poster = 'true'
     # automatically save poster to thumbnail folder if online
     if(online and poster == 'false'):
-        with urllib.request.urlopen("https://api.themoviedb.org/3/search/movie?api_key=15d2ea6d0dc1d476efbca3eba2b9bbfb&query=" + title) as url:
+        search = title.replace(" ", "%20")
+        with urllib.request.urlopen("https://api.themoviedb.org/3/search/movie?api_key=15d2ea6d0dc1d476efbca3eba2b9bbfb&query=" + search) as url:
             if url:
                 data = json.load(url)
-                path = 'http://image.tmdb.org/t/p/w500/' + data['results'][0]['poster_path']
-                f = open(thmb_path + '/' + title + '.jpg', 'wb')
-                f.write(urllib.request.urlopen(path).read())
-                f.close()
-                poster = 'true'
+                if data['results']:
+                    path = 'http://image.tmdb.org/t/p/w500/' + data['results'][0]['poster_path']
+                    f = open(thmb_path + '/' + title + '.jpg', 'wb')
+                    f.write(urllib.request.urlopen(path).read())
+                    f.close()
+                    poster = 'true'
     # append to array
     output.append("{title: '" + stamp[0] + "', type: '" + stamp[1] + "', thumbnail: " + poster + "}")
 
