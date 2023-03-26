@@ -31,6 +31,7 @@ function startMenu() {
   $('.gallery').show();
   $('#video').hide();
   console.log("Closed video and returned to menu.");
+  $('#video').get(0).pause();
 }
 
 function startMovie() {
@@ -41,6 +42,7 @@ function startMovie() {
   $('#video').attr('src', path);
   $('#video')[0].load();
   console.log("Loaded video with path: " + path);
+  $('#video').get(0).play();
 }
 
 function advance() {
@@ -64,28 +66,22 @@ function rollover(i, n) {
 }
 
 function update() {
-  let left = rollover(system.index-1, system.total);
+  let left = rollover(system.index+1, system.total);
   if(movies[left].thumbnail) {
     $('#left').attr('src', drive_path + `thumbnails/` + movies[left].title + '.jpg');
-  } else if(online) {
-    getPoster('#left', movies[left].title);
   } else {
     $('#left').attr('src', './dependency/no-image.png');
   }
 
-  let right = rollover(system.index+1, system.total);
+  let right = rollover(system.index-1, system.total);
   if(movies[right].thumbnail) {
     $('#right').attr('src', drive_path + `thumbnails/` + movies[right].title + '.jpg');
-  } else if(online) {
-    getPoster('#right', movies[right].title);
   } else {
     $('#right').attr('src', './dependency/no-image.png');
   }
 
   if(movies[system.index].thumbnail) {
-    $('#center').attr('src', `./assets/` + movies[system.index].title + '.jpg');
-  } else if(online) {
-    getPoster('#center', movies[system.index].title);
+    $('#center').attr('src', drive_path + `thumbnails/` + movies[system.index].title + '.jpg');
   } else {
     $('#center').attr('src', './dependency/no-image.png');
   }

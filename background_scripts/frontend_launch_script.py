@@ -52,10 +52,10 @@ for title in movies:
                 data = json.load(url)
                 if data['results']:
                     path = 'http://image.tmdb.org/t/p/w500/' + data['results'][0]['poster_path']
-                    print("Found movie poster for " + stamp[0] + " ")
-                    f = open(thmb_path + '/' + stamp[0] + '.jpg', 'wb')
-                    f.write(urllib.request.urlopen(path).read())
-                    f.close()
+                    print("Found movie poster for " + stamp[0] + ", saved to thumbail folder.")
+                    fp = open(thmb_path + '/' + stamp[0] + '.jpg', 'wb')
+                    fp.write(urllib.request.urlopen(path).read())
+                    fp.close()
                     poster = 'true'
                 else:
                     print("Could not find movie poster for " + stamp[0] + ".")
@@ -72,6 +72,5 @@ with open(dep_path+'/movies.js', 'w') as fp:
     # add a new formatted javascript array
     fp.write(output_string)
     fp.write('\n' +  'let drive_path = "' + str(drive_path) + '";')
-    
 
 print("Finished scanning on drive " + str(drive_path) + " with " + str(len(movies)) + " movies and " + str(len(thumbnails)) + " thumbnails.")
