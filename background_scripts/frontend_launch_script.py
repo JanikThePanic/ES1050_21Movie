@@ -36,6 +36,11 @@ for path in os.listdir(dir_path):
         # append to array
         movies.append(path)
 
+print("Finished scanning on drive " + str(drive_path) + " with " + str(len(movies)) + " movies and " + str(len(thumbnails)) + " thumbnails.")
+
+if online and (len(movies) - len(thumbnails)) != 0:
+    print("Device online. Attempting to download "  + str(len(movies) - len(thumbnails)) + " movie poster(s).")
+
 # create output array
 output = []
 for title in movies:
@@ -73,4 +78,4 @@ with open(dep_path+'/movies.js', 'w') as fp:
     fp.write(output_string)
     fp.write('\n' +  'let drive_path = "' + str(drive_path) + '";')
 
-print("Finished scanning on drive " + str(drive_path) + " with " + str(len(movies)) + " movies and " + str(len(thumbnails)) + " thumbnails.")
+print("Finished startup, launching HTML...")
