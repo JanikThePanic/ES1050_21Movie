@@ -65,7 +65,7 @@ for title in movies:
                 else:
                     print("Could not find movie poster for " + stamp[0] + ".")
     # append to array
-    output.append("{title: '" + stamp[0] + "', type: '" + stamp[1] + "', thumbnail: " + poster + "}")
+    output.append("{title: '" + stamp[0] + "', type: '" + stamp[1] + "', thumbnail: " + poster + ", playhead: 0.00}")
 
 # convert the list into a reformatted string
 output_string = 'let movies = [' + (', '.join(str(x) for x in output)) + '];'

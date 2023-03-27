@@ -58,6 +58,7 @@ $(document).ready(function(){
 // menu controls
 function startMenu() {
   system.play = false;
+  movies[system.index].playhead = $('#video').get(0).currentTime;
   $('.gallery').show();
   $('#video').hide();
   console.log("Closed video and returned to menu.");
@@ -72,6 +73,7 @@ function startMovie() {
   $('#video').show();
   $('#video').attr('src', path);
   $('#video')[0].load();
+  $('#video').get(0).currentTime = movies[system.index].playhead;
   console.log("Loaded video with path: " + path);
   $('#video').get(0).play();
 }
