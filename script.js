@@ -72,14 +72,12 @@ function update() {
   } else {
     $('#left').attr('src', './dependency/no-image.png');
   }
-
   let right = rollover(system.index-1, system.total);
   if(movies[right].thumbnail) {
     $('#right').attr('src', drive_path + `thumbnails/` + movies[right].title + '.jpg');
   } else {
     $('#right').attr('src', './dependency/no-image.png');
   }
-
   if(movies[system.index].thumbnail) {
     $('#center').attr('src', drive_path + `thumbnails/` + movies[system.index].title + '.jpg');
   } else {
