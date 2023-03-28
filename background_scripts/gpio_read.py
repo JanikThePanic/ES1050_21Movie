@@ -1,9 +1,17 @@
-# for amit
-# button wires need to go 3.3v to a gpio
-# needed links
-# https://libre.computer/images/posts/mmexport1510488638659.webp
-# https://raspberrypihq.com/use-a-push-button-with-raspberry-pi-gpio/
-# https://docs.google.com/spreadsheets/d/1ruDmSzQexpXX2iCCqma7Vwu6t_ZlEt8robvI0qSdbwk/edit#gid=0
+# add to launcher.sh at end:
+# sudo python gpio_read.py
 
-# just make a loop and map left key to "a", and right to "b" (lowercase)
-# ill add this .py to the auto launch once youre done
+import time
+import gpio
+import os
+import keyboard
+
+gpio.setup(10, gpio.IN)
+
+while True:
+    if os.popen('gpioget gpiochip1 199').read() == "1\n":
+        keyboard.press_and_release("a")
+        time.sleep(1)
+    if os.popen('gpioget gpiochip1 198').read() == "1\n":
+        keyboard.press_and_release("b")
+        time.sleep(1)
