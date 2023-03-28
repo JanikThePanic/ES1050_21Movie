@@ -17,6 +17,9 @@ Exec=/usr/bin/chromium %U --start-fullscreen --start-maximized --app=file:///hom
 
 NOTE: due to delay in the py file, the webpage opens before the py script ends so two reboots are needed to make sure all is good
 
+will prob add gpio loop .py into rc.local after the frontend_launch_script, since it seems rc.local runs async in the background
+only thing, that means 45 second delay before any click registor
+honestly, could just add a 45s delay in webpage that says "loading"
 
 NO LONGER WORKS BECAUSE PY SCRIPT NEEDS USB WHICH LOADS AFTER START UP:
 Ignore 👇
