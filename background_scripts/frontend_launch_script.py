@@ -1,6 +1,9 @@
 import os
-
+import time
 import urllib.request, json
+
+# needs a delay to allow USB to mount in time
+time.sleep(45)
 
 # try connection
 print("Attempting to connect to the internet...")
@@ -16,7 +19,9 @@ if online:
 else:
     print("Connection unsuccessful.")
 
-drive_path = 'G:/'
+# linux ig doesnt do drive letters but just has them under /media/[linux user name]/[usb name]
+# lets name our usb "21Movie"
+drive_path = '/media/janik/21Movie/'
 
 # scan all thumbnails
 thumbnails = []
