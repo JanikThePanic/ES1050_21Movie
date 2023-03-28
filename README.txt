@@ -1,5 +1,7 @@
 frontend_launch_script.py reads a movie directory and creates a javascript arary of titles which automatically downloads movie posters if online
 launcher.sh is the shell file the opens frontend_launch_script
+launcher.sh also launches the forever running gpio loop
+[for gpio_read.py to work https://superuser.com/questions/826124/use-sys-class-gpio-in-python-without-root-permissions]
 
 to launch launcher.sh AFTER start up:
 sudo nano /etc/rc.local
