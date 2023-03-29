@@ -20,8 +20,8 @@ else:
     print("Connection unsuccessful.")
 
 # linux ig doesnt do drive letters but just has them under /media/[linux user name]/[usb name]
-# lets name our usb "21Movie"
-drive_path = '/media/janik/21Movie/'
+# lets name our usb "21MOVIE"
+drive_path = '/media/janik/21MOVIE/'
 
 # scan all thumbnails
 thumbnails = []
