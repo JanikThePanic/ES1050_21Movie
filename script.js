@@ -5,9 +5,12 @@ let system = {
   total: movies.length-1,
   play: false,
   cooldown: false,
-  timeout: undefined
+  timeout: undefined,
+  loaded: false,
+  timer: 50
 }
 update();
+load();
 
 // key input control
 document.addEventListener('keydown', (event) => {
@@ -80,10 +83,10 @@ function startMovie() {
 
 // advance the movie index
 function advance() {
-  if(system.index != system.total) {
-    system.index++;
+  if(system.index != 0) {
+    system.index--;
   } else {
-    system.index = 0;
+    system.index = system.total;
   };
   update();
   console.log("Advanced to movie: "+ movies[system.index].title + " with index: " + system.index)
@@ -119,4 +122,63 @@ function update() {
   } else {
     $('#center').attr('src', './dependency/no-image.png');
   }
+}
+
+// loading functions
+function load() {
+  if(localStorage) {
+    if(checkLocal('loaded')) {
+      if(getLocal('loaded') == 'true') {
+        endLoading();
+        setLocal('loaded', false);
+      } else {
+        startLoading();
+        setLocal('loaded', true);
+      }
+    } else {
+      setLocal('loaded', true);
+    }
+  } else {
+    console.log("Can not create loading screen, local storage unavaliable.")
+    endLoading();
+  }
+}
+
+function endLoading() {
+  console.log("Already loaded, skipping...")
+  system.loaded = true;
+  $("#loading").hide();
+}
+
+function startLoading() {
+  console.log("Starting loading screen. [50 seconds]")
+  $("#second").text(system.timer);
+  $('#center').hide();
+  $('#left').hide();
+  $('#right').hide();
+  let load = setTimeout(() => {
+    system.loaded = true;
+    console.log("Finished loading. Refreshing...");
+    location.reload();
+  }, system.timer*1000);
+  let second = setInterval(() => {
+    system.timer--;
+    $("#second").text(system.timer);
+  }, "1000");
+}
+
+// local storage management
+function setLocal(name, value) {
+  localStorage.setItem(name, value);
+}
+function getLocal(name) {
+  var storage = localStorage.getItem(name);
+  return storage
+}
+function checkLocal(name) {
+ if(localStorage.getItem(name) != null) {
+    return true
+ } else {
+    return false
+ }
 }
