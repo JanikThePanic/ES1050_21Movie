@@ -11,7 +11,5 @@ gpio.setup(10, gpio.IN)
 while True:
     if os.popen('gpioget gpiochip1 199').read() == "1\n":
         keyboard.press_and_release("a")
-        time.sleep(1)
     if os.popen('gpioget gpiochip1 198').read() == "1\n":
         keyboard.press_and_release("b")
-        time.sleep(1)
