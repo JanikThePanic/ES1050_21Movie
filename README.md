@@ -4,4 +4,4 @@ Design Description: Providing a plug-and-run custom streaming solution with mini
 Western University Faculty of Engineering
 Studio Section 21 – Yue Zhou
 Team Identifier: 21Movie
-Team Members: Jahangir Abdullayev, Evan Cowan, Amit Altman, Jagbir Brar, Shajith Shajahan, Talha Kunwar
+Team Members: [Jahangir Abdullayev](https://janik.codes/), Evan Cowan, Amit Altman, Jagbir Brar, Shajith Shajahan, Talha Kunwar
