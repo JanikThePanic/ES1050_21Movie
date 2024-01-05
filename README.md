@@ -1,4 +1,4 @@
-#PINE-ABLE ™: For your movies
+# PINE-ABLE ™: For your movies
 Design Description: Providing a plug-and-run custom streaming solution with minimal effort.
 
 Western University Faculty of Engineering
